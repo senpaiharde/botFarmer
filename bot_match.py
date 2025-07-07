@@ -4,9 +4,10 @@ import cv2
 import pyautogui
 import numpy as np
 import mss
+import keyboard
 
 # === Load template ===
-template = cv2.imread("E.png", cv2.IMREAD_GRAYSCALE)
+template = cv2.imread("./Templates/E.png", cv2.IMREAD_GRAYSCALE)
 h, w = template.shape[:2]
 
 # === Set crop region (center-bottom of screen) ===
@@ -37,5 +38,9 @@ while True:
         print("🟢 Pressed E")
     else:
         print("🔴 No match")
-
-    time.sleep(0.05 + random.random() * 0.15)  # ultra-fast loop
+    if keyboard.is_pressed('q'):
+    print("🛑 Stopping bot.")
+    break
+    BASE_DELAY = 0.1
+    RAND_RANGE = 0.2
+    time.sleep(BASE_DELAY + random.random() * RAND_RANGE)  # ultra-fast loop
