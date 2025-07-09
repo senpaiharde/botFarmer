@@ -7,7 +7,7 @@ import mss
 import keyboard
 
 # === Load template ===
-template = cv2.imread("./Templates/E.png", cv2.IMREAD_GRAYSCALE)
+template = cv2.imread("./Templates/E.wwwwwwwwwwwwpng", cv2.IMREAD_GRAYSCALE)
 h, w = template.shape[:2]
 
 # === Set crop region (center-bottom of screen) ===

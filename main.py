@@ -12,7 +12,7 @@ if __name__ == '__main__':
     try:
         while True:
             if keyboard.is_pressed(QUIT_KEY):
-                print('Quit key pressed.')
+                print('Quit key pressed.')wwwwwww
                 break
 
             if state == 'search_tree':

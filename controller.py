@@ -83,6 +83,6 @@ def find_marker_and_harvest():
         return True
     return False
 
-
+www
 def cleanup():
     cv2.destroyAllWindows()
