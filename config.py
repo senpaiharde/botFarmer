@@ -1,25 +1,29 @@
-# config.py
-# config.py
-GAME_REGION = {
-    "left":   340,
-    "top":    260,
-    "width":  600,
-    "height": 650   # ← big enough to cover your tallest template (636px)
-}
+import pyautogui
+from pathlib import Path
 
+# Screen capture region
+W, H = pyautogui.size()
+GAME_REGION = dict(
+    left=W//2 - 300,
+    top=H - 650,
+    width=600,
+    height=450
+)
 
-THRESHOLD       = 0.75
-HARVEST_KEY     = "e"
-MIN_DELAY       = 0.1      # seconds
-MAX_DELAY       = 0.3
-COOLDOWN        = 2.5      # seconds between chops
-MARKER_TEMPLATE   = "./Templates/E.png"
+# Template folders
+TREE_TEMPLATES = list(Path('templates').glob('Screenshot_*.png'))
+MARKER_TEMPLATE = Path('templates/E.png')  # the E icon
 
-# list all your tree templates here
-TREE_TEMPLATES = [
-    './Templates/Screenshot_22.png',
-    './Templates/Screenshot_23.png',
-    './Templates/Screenshot_24.png',
-    './Templates/Screenshot_25.png',
-    # add more as you upload them
-]
+# Detection thresholds
+TREE_THRESHOLD = 0.7
+MARKER_THRESHOLD = 0.75
+
+# Keys
+HARVEST_KEY = 'e'
+QUIT_KEY = 'q'
+
+# Timing
+LOOP_SLEEP = 0.1
+AFTER_MOVE_DELAY = 0.5
+AFTER_HARVEST_DELAY = 1.0
+CAMERA_PAN_DURATION = 0.3  # seconds
